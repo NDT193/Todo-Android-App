@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/elip1"
+            android:layout_width="150dp"
+            android:layout_height="69dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/elip1" />
+
+
+        <ImageView
+            android:id="@+id/elip2"
+            android:layout_width="60dp"
+            android:layout_height="115dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/elip2" />
+
+        <ImageView
+            android:id="@+id/backtohome_src"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/icon_arrow_go_back_line" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="60dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Tạo lịch trình cần làm mới nào !"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/human"
+            android:layout_width="102dp"
+            android:layout_height="195dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/human_jpg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="320dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Tiêu đề"
+            android:paddingBottom="8dp"
+            android:paddingLeft="12dp"
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bogoc"
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="9dp">
+
+            <EditText
+                android:id="@+id/tieude"
+                android:layout_width="354dp"
+                android:layout_height="wrap_content"
+                android:hint="Vui lòng nhập tiêu đề công việc"
+                android:textColor="#523535"
+                android:textSize="15sp"
+                android:backgroundTint="@android:color/transparent"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dut"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Độ ưu tiên"
+            android:paddingBottom="8dp"
+            android:paddingLeft="12dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bogoc"
+            android:paddingVertical="19dp"
+            android:paddingHorizontal="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginHorizontal="15dp"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/sp_dut"
+                android:layout_width="347dp"
+                android:layout_height="wrap_content"
+                android:textColor="#523535"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Ngày kết thúc"
+            android:paddingLeft="12dp"
+            android:paddingBottom="8dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bogoc"
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="9dp">
+
+            <EditText
+                android:id="@+id/ngaykt"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:enabled="false"
+                android:hint="Chọn ngày két thúc"
+                android:textColor="#523535"
+                android:textSize="15sp"
+                android:backgroundTint="@android:color/transparent"/>
+
+            <ImageView
+                android:id="@+id/date_picker"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/icon_calendar" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="121dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorGreen"
+            android:text="Thêm"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
