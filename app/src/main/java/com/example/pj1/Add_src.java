@@ -58,6 +58,8 @@ public class Add_src  extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 services.Insert(mydb,tieude,dut,ngaykt, Add_src.this);
+                tieude.setText("");
+                ngaykt.setText("");
             }
         });
     }
