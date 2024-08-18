@@ -19,6 +19,10 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
+import Database.Database;
+import Database.Evn;
 import Database.Services;
 import Function.Func;
 
@@ -31,6 +35,7 @@ public class Home_src extends AppCompatActivity {
     private Services services = new Services();
 
     private Func fun = new Func();
+    private Evn evn = new Evn();
 
 
     @Override
@@ -44,8 +49,7 @@ public class Home_src extends AppCompatActivity {
         them.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent act = new Intent(Home_src.this, Add_src.class);
-                startActivity(act);
+                fun.goToActivity(Home_src.this, Add_src.class);
             }
         });
 
@@ -69,6 +73,9 @@ public class Home_src extends AppCompatActivity {
             card_tieude.setText(cursor.getString(1));
             card_dut.setText(cursor.getString(2));
 
+
+
+
             deleted.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -80,9 +87,11 @@ public class Home_src extends AppCompatActivity {
 
             pencil.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    fun.UpdateDialog(Gravity.CENTER,Home_src.this,mydb,id);
-
+                public void onClick(View v2) {
+                    evn.getID = id ;
+//                    Intent intent = new Intent(Home_src.this, Update_src.class);
+//                    startActivity(intent);
+                        fun.goToActivity(Home_src.this,Update_src.class);
                 }
             });
             linearLayout.addView(view);

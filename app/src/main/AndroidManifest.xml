@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Add_src" />
+        <activity android:name=".Update_src" />
     </application>
 
 </manifest>

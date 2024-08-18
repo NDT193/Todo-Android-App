@@ -3,6 +3,7 @@ package Function;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.Gravity;
 import android.view.View;
@@ -59,52 +60,9 @@ public class Func {
         });
     }
 
-    public void UpdateDialog(int gravity, Context context, SQLiteDatabase mydb, String id)
-    {
-        final Dialog dialog = new Dialog(context);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.update_dialog);
-        Window window =dialog.getWindow();
-        if (window==null){
-            return;
-        }
-
-        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-        WindowManager.LayoutParams windowAtt = window.getAttributes();
-        windowAtt.gravity = gravity;
-        window.setAttributes(windowAtt);
-
-        if(Gravity.BOTTOM == gravity)
-        {
-         dialog.setCancelable(false);
-        }else {
-            dialog.setCancelable(true);
-        }
-
-        EditText upTD = dialog.findViewById(R.id.upTD);
-        Spinner upDUT = dialog.findViewById(R.id.upDUT);
-        EditText upNgaykt = dialog.findViewById(R.id.upNgaykt);
-        Button btlYes = dialog.findViewById(R.id.btl_yes);
-        Button btlNo = dialog.findViewById(R.id.btl_no);
-
-        Spiner(upDUT, context);
-        services.FindbyID(mydb, id, upTD, upNgaykt,context);
-
-        btlYes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        btlNo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.setCancelable(true);
-            }
-        });
-
-        dialog.show();
+    public static void goToActivity(Context context, Class<?> activityClass) {
+        Intent intent = new Intent(context, activityClass);
+        context.startActivity(intent);
     }
 
 }

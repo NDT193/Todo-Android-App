@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.renderscript.Sampler;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -41,19 +42,33 @@ public class Services {
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }
 
-    public int Deleted(SQLiteDatabase mydb, String tableName, String whereClause, String[] whereArgs, Context context)
+    public void Deleted(SQLiteDatabase mydb, String tableName, String whereClause, String[] whereArgs, Context context)
     {
         int rowDeleted = mydb.delete(tableName,whereClause, whereArgs);
         String msg ="";
         if(rowDeleted==0)
         {
-            msg="False";
+            msg="Xóa thất bại";
         }else {
-            msg="Succ";
+            msg="Xóa thành công";
         }
         Toast.makeText(context, msg,Toast.LENGTH_LONG).show();
         mydb.close();
-        return rowDeleted;
+    }
+
+    public int Update(SQLiteDatabase mydb, java.lang.String table, EditText txt1 ,Spinner sp1, EditText txt2,String id , Context context)
+    {
+        String upTD = txt1.getText().toString();
+        String upDUT = sp1.getSelectedItem().toString();
+        String upNgaykt = txt2.getText().toString();
+        ContentValues values= new ContentValues();
+        values.put("tieuDe",upTD);
+        values.put("doUt",upDUT);
+        values.put("ngayKt",upNgaykt);
+
+        int rowUpdate = mydb.update(table,values,"ID =?",new String[]{id});
+
+        return rowUpdate;
     }
 
 
@@ -64,20 +79,7 @@ public class Services {
         return cursor;
     }
 
-    public void FindbyID(SQLiteDatabase mydb,String id, EditText txt1, EditText txt2, Context context )
-    {
-        Cursor cursor = mydb.rawQuery("SELECT * FROM Congviec WHERE ID = ?", new String[] { id });
-        if (cursor.getCount() > 0)
-        {
-            cursor.moveToFirst();
-            txt1.setText(cursor.getString(1));
-            txt2.setText(cursor.getString(3));
-        }else
-        {
-            Toast.makeText(context,"Không tìm thấy dữ liệu",Toast.LENGTH_SHORT);
-        }
-        cursor.close();
-    }
+
 
 
 }

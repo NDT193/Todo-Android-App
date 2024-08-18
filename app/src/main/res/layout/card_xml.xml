@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,7 +16,7 @@
             android:padding="8dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
-            >
+            android:id="@+id/cardview">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -36,24 +35,24 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="3dp"
                         android:backgroundTint="@android:color/transparent"
+                        android:enabled="false"
                         android:text="Đâu là nơi tiêu dề được hiển thị"
-                        android:textSize="15sp"
-                        android:enabled="false"/>
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/cardDut"
                         android:layout_width="wrap_content"
                         android:layout_height="25dp"
-                        android:textAlignment="center"
                         android:background="@drawable/dut_corners"
-                        android:text="Đây là nơi hiểu thị đợ ưu tiên công việc"
                         android:paddingStart="10dp"
-                        android:paddingEnd="10dp"/>
+                        android:paddingEnd="10dp"
+                        android:text="Đây là nơi hiểu thị đợ ưu tiên công việc"
+                        android:textAlignment="center" />
+
                     <TextView
                         android:id="@+id/ID"
                         android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        />
+                        android:layout_height="0dp" />
                 </LinearLayout>
 
                 <LinearLayout

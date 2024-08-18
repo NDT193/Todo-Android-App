@@ -10,6 +10,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,8 +49,7 @@ public class Add_src  extends AppCompatActivity {
         backtohome_src.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Add_src.this, Home_src.class);
-                startActivity(intent);
+                func.goToActivity(Add_src.this, Home_src.class);
             }
         });
 
@@ -57,7 +57,12 @@ public class Add_src  extends AppCompatActivity {
         them.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                services.Insert(mydb,tieude,dut,ngaykt, Add_src.this);
+                if(tieude.equals("") || ngaykt.equals(""))
+                {
+                    Toast.makeText(Add_src.this, "Vui lòng nhập thông tin", Toast.LENGTH_SHORT).show();
+                }else {
+                    services.Insert(mydb, tieude, dut, ngaykt, Add_src.this);
+                }
                 tieude.setText("");
                 ngaykt.setText("");
             }
