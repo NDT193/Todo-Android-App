@@ -57,6 +57,12 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
@@ -81,6 +87,21 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:src="@drawable/deletedbin" />
+
+                </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/time_expierd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/time_expired_shape"
+                        android:text="Hết Hạn"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:visibility="invisible" />
 
                 </LinearLayout>
 

@@ -173,8 +173,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/icon_calendar"
-                android:layout_marginTop="7dp"/>
+                android:layout_marginTop="7dp"
+                android:src="@drawable/icon_calendar" />
         </LinearLayout>
 
         <LinearLayout

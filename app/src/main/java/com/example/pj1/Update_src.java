@@ -6,16 +6,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import Database.Evn;
 import Database.Services;
@@ -30,7 +26,7 @@ public class Update_src extends AppCompatActivity {
     EditText upTD, upNgaykt;
     Button btlNo, btlYes;
     Spinner upDUT;
-    ImageView troVe;
+    ImageView troVe, datePicker1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +35,7 @@ public class Update_src extends AppCompatActivity {
         mydb = openOrCreateDatabase("Congviec", MODE_PRIVATE, null);
 
         troVe = findViewById(R.id.backIcon);
+        datePicker1 = findViewById(R.id.date_picker);
         upTD = findViewById(R.id.upTD);
         upDUT = findViewById(R.id.upDUT);
         upNgaykt =findViewById(R.id.upNgaykt);
@@ -59,6 +56,13 @@ public class Update_src extends AppCompatActivity {
             public void onClick(View view) {
                 upTD.setText("");
                 upNgaykt.setText("");
+            }
+        });
+
+        datePicker1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                func.Datepicker(datePicker1,upNgaykt,Update_src.this);
             }
         });
 
