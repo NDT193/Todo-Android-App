@@ -22,11 +22,8 @@ public class Func {
 
     private Services services = new Services();
     public void Spiner(Spinner spinner, Context context) {
-        //Dùng 1 mang String[] để lưu trữ các phần tử
         String[] items = new String[]{"Thấp", "Trung Bình", "Cao"};
-        // Tạo một ArrayAdapter từ mảng String
         ArrayAdapter<String> adapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, items);
-        //Xét adpter cho spinner để hiện các items đã thêm
         spinner.setAdapter(adapter);
     }
 
